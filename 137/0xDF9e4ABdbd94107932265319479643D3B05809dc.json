@@ -696,7 +696,11 @@
                 ],
                 "internalType": "struct DataTypes.EModeCategory",
                 "name": "category",
-                "type": "tuple"
+                "type": "tuple",
+                "meta": {
+                    "kind": "struct",
+                    "description": "The configuration of the category"
+                }
             }
         ],
         "name": "configureEModeCategory",
@@ -705,11 +709,7 @@
         "type": "function",
         "docs": {
             "notice": "Configures a new category for the eMode.",
-            "dev": "In eMode, the protocol allows very high borrowing power to borrow assets of the same category. The category 0 is reserved as it's the default for volatile assets",
-            "params": {
-                "id": "The id of the category",
-                "config": "The configuration of the category"
-            }
+            "dev": "In eMode, the protocol allows very high borrowing power to borrow assets of the same category. The category 0 is reserved as it's the default for volatile assets"
         }
     },
     {
@@ -741,13 +741,7 @@
         "type": "function",
         "docs": {
             "notice": "Supplies an `amount` of underlying asset into the reserve, receiving in return overlying aTokens. E.g. User supplies 100 USDC and gets in return 100 aUSDC",
-            "dev": "Deprecated: Use the `supply` function instead",
-            "params": {
-                "asset": "The address of the underlying asset to supply",
-                "amount": "The amount to be supplied",
-                "onBehalfOf": "The address that will receive the aTokens, same as msg.sender if the user wants to receive them on his own wallet, or a different address if the beneficiary of aTokens is a different wallet",
-                "referralCode": "Code used to register the integrator originating the operation, for potential rewards. 0 if the action is executed directly by the user, without any middle-man"
-            }
+            "dev": "Deprecated: Use the `supply` function instead"
         }
     },
     {
